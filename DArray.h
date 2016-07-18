@@ -11,23 +11,22 @@
 
 /*
  * 
- * To put a x type data y into array Arr in the position z:
- *
+ * put
  * x*addr = (x*)malloc(sizeof(x));
  * *addr = y
- * *DAgetptr(Arr,z) = a; Or use __LQ()__AGP(Arr,z);
+ * *DAgetptr(Arr,z) = a; Or __LQ()__AGP(Arr,z);
  * 
- * To Get a x type data from array Arr in the position z:
+ * get
  *
  * *(x*)(*DAgetptr(Arr,z));
  *
- * Or use  __TY(x)__AGP(Arr,z);  directly
+ * Or  __TY(x)__AGP(Arr,z); 
  *
- * To Get a x* type pointer from Arr in the position z:
+ *Get x* type pointer with position z:
  *
  * (x*)(*DAgetptr(Arr,z));
  *
- * Or use __PTY(x*)__AGP(Arr,z);
+ * Or __PTY(x*)__AGP(Arr,z);
  *
  */
 
@@ -41,15 +40,9 @@ struct DArray{
     unsigned long size;
     unsigned long x;
 
-    /*
-     * addinfo - detail of DA
-     * addinfo - cont - num of ele in DA
-     * addinfo - mess1 - should be 0 or 1, to determine whether eles in DA are continuous
-     * addinfo - mess2 - not used
-     */
+
     struct messPack addinfo;
     
-    //optional ptrs:
     void***ptr;
     
 };
